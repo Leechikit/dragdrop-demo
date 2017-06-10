@@ -40,6 +40,12 @@ function eventBind() {
  */
 function dragstartEvent() {
 	dragListEl.addEventListener("dragstart", (event) => {
+		/*setDragImage start*/
+		let img = document.createElement('img');
+		img.src = "../image/draging.png";
+		event.dataTransfer.setDragImage(img,100,20);
+		/*setDragImage end*/
+
 		dragEl = event.target;
 		console.log("dragstart");
 	});
@@ -71,7 +77,6 @@ function dragendEvent() {
  */
 function dragenterEvent() {
 	dropListEl.addEventListener("dragenter", (event) => {
-		event.dataTransfer.dropEffect = "move";
 		console.log("dragenter");
 	});
 }
@@ -83,7 +88,6 @@ function dragenterEvent() {
 function dragoverEvent() {
 	dropListEl.addEventListener("dragover", (event) => {
 		event.preventDefault();
-		event.dataTransfer.dropEffect = "move";
 		console.log("dragover");
 	})
 }
@@ -104,11 +108,6 @@ function dragleaveEvent() {
  */
 function dropEvent() {
 	dropListEl.addEventListener("drop", (event) => {
-		// dragEl.parentNode.removeChild(dragEl);
-		//event.target.appendChild(dragEl);
-		event.preventDefault();
-		let files = event.dataTransfer.files;
-		console.log(files);
 		console.log("drop");
 	});
 }

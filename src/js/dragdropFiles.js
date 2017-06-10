@@ -58,6 +58,7 @@ function dropEvent() {
 	filesZoneEl.addEventListener("drop", (event) => {
 		event.preventDefault();
 		let files = event.dataTransfer.files;
+		filesZoneEl.style.opacity = 1;
 		for (let i = 0, len = files.length; i < len; i++) {
 			let liEl = document.createElement("li");
 			liEl.innerHTML = files[i].name;
