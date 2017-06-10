@@ -72,6 +72,7 @@ function dragendEvent() {
 function dragoverEvent() {
 	dropListEl.addEventListener("dragover", (event) => {
 		event.preventDefault();
+		event.dataTransfer.dropEffect = "move";
 		console.log("dragover");
 	})
 }
@@ -82,6 +83,7 @@ function dragoverEvent() {
  */
 function dragenterEvent() {
 	dropListEl.addEventListener("dragenter", (event) => {
+		event.dataTransfer.dropEffect = "move";
 		console.log("dragenter");
 	});
 }
@@ -103,7 +105,10 @@ function dragleaveEvent() {
 function dropEvent() {
 	dropListEl.addEventListener("drop", (event) => {
 		// dragEl.parentNode.removeChild(dragEl);
-		event.target.appendChild(dragEl);
+		//event.target.appendChild(dragEl);
+		event.preventDefault();
+		let files = event.dataTransfer.files;
+		console.log(files);
 		console.log("drop");
 	});
 }
