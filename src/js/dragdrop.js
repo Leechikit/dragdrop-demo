@@ -66,6 +66,17 @@ function dragendEvent() {
 }
 
 /**
+ * dragenter
+ *
+ */
+function dragenterEvent() {
+	dropListEl.addEventListener("dragenter", (event) => {
+		event.dataTransfer.dropEffect = "move";
+		console.log("dragenter");
+	});
+}
+
+/**
  * dragover
  *
  */
@@ -75,17 +86,6 @@ function dragoverEvent() {
 		event.dataTransfer.dropEffect = "move";
 		console.log("dragover");
 	})
-}
-
-/**
- * dragenter
- *
- */
-function dragenterEvent() {
-	dropListEl.addEventListener("dragenter", (event) => {
-		event.dataTransfer.dropEffect = "move";
-		console.log("dragenter");
-	});
 }
 
 /**
