@@ -43,10 +43,12 @@ function dragstartEvent() {
 		/*setDragImage start*/
 		let img = document.createElement('img');
 		img.src = "../image/draging.png";
-		event.dataTransfer.setDragImage(img,100,20);
+		event.dataTransfer.setDragImage(img, 100, 20);
 		/*setDragImage end*/
 
-		dragEl = event.target;
+		let dataList = event.dataTransfer.items;
+		console.log(event.dataTransfer)
+		dataList.add(event.target.getAttribute('data-drag'), "text/plain");
 		console.log("dragstart");
 	});
 }
@@ -67,6 +69,8 @@ function dragEvent() {
  */
 function dragendEvent() {
 	dragListEl.addEventListener("dragend", (event) => {
+		let dataList = event.dataTransfer.items;
+		dataList.clear();
 		console.log("dragend");
 	});
 }
@@ -108,6 +112,16 @@ function dragleaveEvent() {
  */
 function dropEvent() {
 	dropListEl.addEventListener("drop", (event) => {
+		let dataList = event.dataTransfer.items;
+		for (let i = 0, len = dataList.length; i < len; i++) {
+			if (dataList[i].kind == "string" && dataList[i].type.match("^text/plain")) {
+				dataList[i].getAsString((index) => {
+					let elem = document.querySelector('[data-drag="' + index + '"]');
+					dropListEl.appendChild(elem);
+				})
+			}
+		}
+
 		console.log("drop");
 	});
 }

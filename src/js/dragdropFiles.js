@@ -65,6 +65,10 @@ function dropEvent() {
 			filesList.push(files[i]);
 			filesListEl.appendChild(liEl);
 		}
+		let items = event.dataTransfer.items;
+		for (let i = 0, len = items.length; i < len; i++) {
+			console.log(items[i].getAsFile());
+		}
 	});
 }
 
