@@ -1,0 +1,64 @@
+.demo-box-1 .drag-list {
+  min-height: 40px;
+  margin: 40px 0;
+  background-color: gray; }
+  .demo-box-1 .drag-list li[class|="drag-item"] {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center; }
+  .demo-box-1 .drag-list li[draggable="true"] {
+    cursor: -webkit-grab; }
+
+.demo-box-1 .drag-item-1 {
+  background-color: blue; }
+
+.demo-box-1 .drag-item-2 {
+  background-color: orange; }
+
+.demo-box-1 .drag-item-3 {
+  background-color: pink; }
+
+.demo-box-1 .drag-item-4 {
+  background-color: purple; }
+
+.demo-box-1 .drag-item-5 {
+  background-color: red; }
+
+.demo-box-1 .drag-item-6 {
+  background-color: yellow; }
+
+.demo-box-1 .drop-list {
+  min-height: 40px;
+  margin: 40px 0;
+  background-color: gray; }
+  .demo-box-1 .drop-list li[class|="drag-item"] {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center; }
+
+.demo-box-2 .drop-files-zone {
+  margin: 40px;
+  height: 80px;
+  border: 2px dashed gray;
+  line-height: 80px;
+  font-size: 40px;
+  color: gray;
+  text-align: center; }
+
+.demo-box-2 .files-list {
+  margin: 20px 40px; }
+  .demo-box-2 .files-list li {
+    height: 22px;
+    font-size: 14px;
+    line-height: 22px; }
+
+div[class|="demo-box"] {
+  margin-bottom: 40px;
+  background-color: #eee;
+  overflow: hidden; }
