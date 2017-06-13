@@ -116,6 +116,7 @@ event.dataTransfer.items.clear();
 
 ### kind
 拖拽数据对象类型。
+
 | Value     | Description                   |
 | --------- | ----------------------------- |
 | file      | 文件类型。|
