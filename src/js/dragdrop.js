@@ -5,12 +5,18 @@
  * @update: 
  */
 
+// 节流
+import Throttle from './throttle.js';
+let throttle = new Throttle();
+let throttle2 = new Throttle();
 // 拖拽列表
-const dragListEl = document.querySelector('.drag-list');
-// 垃圾箱
-const dropListEl = document.querySelector('.drop-list');
-// 拖拽元素
-let dragEl;
+let dragListEl = document.querySelector('.drag-list');
+// 放置目标
+let dropListEl = document.querySelector('.drop-list');
+// 拖拽状态
+let dragStatusEl = document.querySelector('.drag-status');
+// 放置目标
+let dropStatusEl = document.querySelector('.drop-status');
 
 /**
  * 初始化
@@ -41,15 +47,18 @@ function eventBind() {
 function dragstartEvent() {
 	dragListEl.addEventListener("dragstart", (event) => {
 		/*setDragImage start*/
-		let img = document.createElement('img');
-		img.src = "../image/draging.png";
-		event.dataTransfer.setDragImage(img, 100, 20);
+		// let img = document.createElement('img');
+		// img.src = "../image/draging.png";
+		// event.dataTransfer.setDragImage(img, 100, 20);
 		/*setDragImage end*/
 
 		let dataList = event.dataTransfer.items;
 		console.log(event.dataTransfer)
 		dataList.add(event.target.getAttribute('data-drag'), "text/plain");
 		console.log("dragstart");
+		throttle(() => {
+			dragStatusEl.innerHTML = "dragstart";
+		});
 	});
 }
 
@@ -59,7 +68,10 @@ function dragstartEvent() {
  */
 function dragEvent() {
 	dragListEl.addEventListener("drag", (event) => {
-		//console.log("drag");
+		console.log("drag");
+		throttle(() => {
+			dragStatusEl.innerHTML = "drag";
+		});
 	});
 }
 
@@ -72,6 +84,9 @@ function dragendEvent() {
 		let dataList = event.dataTransfer.items;
 		dataList.clear();
 		console.log("dragend");
+		throttle(() => {
+			dragStatusEl.innerHTML = "dragend";
+		}, true);
 	});
 }
 
@@ -82,6 +97,9 @@ function dragendEvent() {
 function dragenterEvent() {
 	dropListEl.addEventListener("dragenter", (event) => {
 		console.log("dragenter");
+		throttle2(() => {
+			dropStatusEl.innerHTML = "dragenter";
+		});
 	});
 }
 
@@ -93,7 +111,10 @@ function dragoverEvent() {
 	dropListEl.addEventListener("dragover", (event) => {
 		event.preventDefault();
 		console.log("dragover");
-	})
+		throttle2(() => {
+			dropStatusEl.innerHTML = "dragover";
+		});
+	});
 }
 
 /**
@@ -103,6 +124,9 @@ function dragoverEvent() {
 function dragleaveEvent() {
 	dropListEl.addEventListener("dragleave", (event) => {
 		console.log("dragleave");
+		throttle2(() => {
+			dropStatusEl.innerHTML = "dragleave";
+		}, true);
 	});
 }
 
@@ -123,6 +147,9 @@ function dropEvent() {
 		}
 
 		console.log("drop");
+		throttle2(() => {
+			dropStatusEl.innerHTML = "drop";
+		}, true);
 	});
 }
 

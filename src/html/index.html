@@ -10,14 +10,20 @@
 <body>
     <img src="../image/draging.png" alt="" style="display:none">
     <div class="demo-box-1">
+        <div class="status-box">
+            drag status：<span class="drag-status"></span><br/>
+            drop status: <span class="drop-status"></span>
+        </div>
         <ul class="drag-list">
-            <li class="drag-item-1" draggable="true" data-drag="1">drag item 1</li>
-            <li class="drag-item-2" draggable="true" data-drag="2">drag item 2</li>
-            <li class="drag-item-3" data-drag="3">drag item 3</li>
+            <li class="drag-item" draggable="true" data-drag="1">BABY 1</li>
+            <li class="drag-item" draggable="true" data-drag="2">BABY 2</li>
+            <li class="drag-item" data-drag="3">BABY 3</li>
         </ul>
-        <ul class="drop-list">
-            <li class="drag-item-text">垃圾箱</li>
-        </ul>
+        <div class="drop-zone">
+            <ul class="drop-list">
+                <!-- <li class="drag-item-text"></li> -->
+            </ul>
+        </div>
     </div>
     <div class="demo-box-2">
 		<div class="drop-files-zone">DROP FILES HERE</div>

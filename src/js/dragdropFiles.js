@@ -5,8 +5,8 @@
  * @update: 
  */
 
-const filesZoneEl = document.querySelector('.drop-files-zone');
-const filesListEl = document.querySelector('.files-list');
+let filesZoneEl = document.querySelector('.drop-files-zone');
+let filesListEl = document.querySelector('.files-list');
 let filesList = [];
 
 /**
