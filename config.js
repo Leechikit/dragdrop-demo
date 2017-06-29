@@ -11,9 +11,9 @@ exports.default = {
 		'jquery': 'window.jQuery'
 	},
 	//端口
-	port: 3000,
+	port: 2333,
 	//静态资源地址
-	publicPath: '//127.0.0.1:3000/',
+	publicPath: '//127.0.0.1:2333/',
 	//项目输出地址
 	outputPath: './dist/'
 }
