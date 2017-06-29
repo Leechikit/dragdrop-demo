@@ -136,9 +136,7 @@ function dragleaveEvent() {
 function dropEvent() {
 	dropListEl.addEventListener("drop", (event) => {
 		let dataList = event.dataTransfer.items;
-		console.log(event.dataTransfer);
 		for (let i = 0, len = dataList.length; i < len; i++) {
-			console.log(dataList[i]);
 			if (dataList[i].kind == "string" && dataList[i].type.match("^text/plain")) {
 				dataList[i].getAsString((index) => {
 					let elem = document.querySelector('[data-drag="' + index + '"]');
