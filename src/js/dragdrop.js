@@ -48,11 +48,12 @@ function dragstartEvent() {
 	dragListEl.addEventListener("dragstart", (event) => {
 		/*setDragImage start*/
 		let img = document.createElement('img');
-		img.src = "../image/draging2.jpg";
+		img.src = "../image/i_just_a_baby.jpg";
 		event.dataTransfer.setDragImage(img, 125, 100);
 		/*setDragImage end*/
-		let dataList = event.dataTransfer.items;
-		dataList.add(event.target.getAttribute('data-drag'), "text/plain");
+		// let dataList = event.dataTransfer.items;
+		// dataList.add(event.target.getAttribute('data-drag'), "text/plain");
+		event.dataTransfer.setData("text/plain",event.target.getAttribute('data-drag'));
 
 		console.log("dragstart");
 		throttle(() => {

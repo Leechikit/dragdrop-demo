@@ -9,11 +9,18 @@
 		text-align: center;
 	}
 	.files-list{
+		min-height: 24px;
 		margin:20px 40px;
+		overflow: hidden;
 		li{
-			height: 22px;
+			float:left;
+			padding: 0 5px;
+			height: 24px;
 			font-size: 14px;
-			line-height: 22px;
+			line-height: 24px;
+			color:gray;
+			border:1px solid gray;
+			border-radius: 3px;
 		}
 	}
 }
