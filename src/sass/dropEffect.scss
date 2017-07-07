@@ -1,0 +1,10 @@
+.demo-box-3{
+	display: flex;
+	justify-content:center;
+	.box-left,.box-right{
+		margin:20px;
+		.title{
+			font-size: 14px;
+		}
+	}
+}

@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <img src="../image/i_just_a_baby.jpg" alt="" style="display:none">
     <div class="demo-box-1">
+        <img src="../image/i_just_a_baby.jpg" alt="" style="display:none">
         <div class="status-box">
             drag status：<span class="drag-status"></span><br/>
             drop status: <span class="drop-status"></span>
@@ -28,6 +28,40 @@
     <div class="demo-box-2">
 		<div class="drop-files-zone">DROP FILES HERE</div>
 		<ul class="files-list"></ul>
+    </div>
+    <div class="demo-box-3">
+        <div class="box-left">
+            <p>
+                <span class="title">选择effectAllowed：</span>
+                <select name="" id="" class="select-effectAllowed">
+                    <option value="none">none</option>
+                    <option value="copy">copy</option>
+                    <option value="copyLink">copyLink</option>
+                    <option value="copyMove">copyMove</option>
+                    <option value="link">link</option>
+                    <option value="linkMove">linkMove</option>
+                    <option value="move">move</option>
+                    <option value="all">all</option>
+                </select>
+            </p>
+            <ul class="drag-list">
+                <li class="drag-item" draggable="true">BABY 1</li>
+                <li class="drag-item" draggable="true">BABY 2</li>
+                <li class="drag-item" draggable="true">BABY 3</li>
+            </ul>
+        </div>
+        <div class="box-right">
+            <p>
+                <span class="title">选择dropEffect：</span>
+                <select name="" id="" class="select-dropEffect">
+                    <option value="none">none</option>
+                    <option value="copy">copy</option>
+                    <option value="link">link</option>
+                    <option value="move">move</option>
+                </select>
+            </p>
+            <div class="drop-zone"></div>
+        </div>
     </div>
     <script src="../js/index.bundle.js" type="text/javascript"></script>
 </body>

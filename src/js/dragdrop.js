@@ -10,13 +10,13 @@ import Throttle from './throttle.js';
 let throttle = new Throttle();
 let throttle2 = new Throttle();
 // 拖拽列表
-let dragListEl = document.querySelector('.drag-list');
+let dragListEl = document.querySelector('.demo-box-1 .drag-list');
 // 放置目标
-let dropListEl = document.querySelector('.drop-list');
+let dropListEl = document.querySelector('.demo-box-1 .drop-list');
 // 拖拽状态
-let dragStatusEl = document.querySelector('.drag-status');
+let dragStatusEl = document.querySelector('.demo-box-1 .drag-status');
 // 放置目标
-let dropStatusEl = document.querySelector('.drop-status');
+let dropStatusEl = document.querySelector('.demo-box-1 .drop-status');
 
 /**
  * 初始化
