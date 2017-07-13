@@ -52,7 +52,8 @@ function dragstartEvent() {
 		event.dataTransfer.setDragImage(img, 125, 100);
 		/*setDragImage end*/
 		// let dataList = event.dataTransfer.items;
-		// dataList.add(event.target.getAttribute('data-drag'), "text/plain");
+		//dataList.add(event.target.getAttribute('data-drag'), "text/plain");
+		event.dataTransfer.items.add("123", "text/plain2");
 		event.dataTransfer.setData("text/plain",event.target.getAttribute('data-drag'));
 
 		console.log("dragstart");
@@ -137,10 +138,11 @@ function dragleaveEvent() {
 function dropEvent() {
 	dropListEl.addEventListener("drop", (event) => {
 		let dataList = event.dataTransfer.items;
+		console.log(event.dataTransfer.types);
 		for (let i = 0, len = dataList.length; i < len; i++) {
 			if (dataList[i].kind == "string" && dataList[i].type.match("^text/plain")) {
 				dataList[i].getAsString((index) => {
-					let elem = document.querySelector('[data-drag="' + index + '"]');
+					let elem = document.querySelector('.demo-box-1 [data-drag="' + index + '"]');
 					let cloneElem = elem.cloneNode(true);
 					dropListEl.appendChild(cloneElem);
 					elem.style.visibility = "hidden";

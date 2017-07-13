@@ -5,8 +5,8 @@
  * @update: 
  */
 
-let filesZoneEl = document.querySelector('demo-box-2 .drop-files-zone');
-let filesListEl = document.querySelector('demo-box-2 .files-list');
+let filesZoneEl = document.querySelector('.demo-box-2 .drop-files-zone');
+let filesListEl = document.querySelector('.demo-box-2 .files-list');
 let filesList = [];
 
 /**
@@ -63,6 +63,7 @@ function dropEvent() {
 			let liEl = document.createElement("li");
 			liEl.innerHTML = files[i].name;
 			filesList.push(files[i]);
+			console.log(files[i])
 			filesListEl.appendChild(liEl);
 		}
 		let items = event.dataTransfer.items;
